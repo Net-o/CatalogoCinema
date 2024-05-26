@@ -1,0 +1,32 @@
+package com.aula.aplicacao.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+import jakarta.validation.Valid;
+import jakarta.websocket.server.PathParam;
+
+@Controller
+@RequestMapping("/catalago")
+public class CatalagoController {
+	
+	
+	@GetMapping("/listar")
+	public String listar(Model model) {
+		return "cadastro";
+	}
+}
+	
+	
