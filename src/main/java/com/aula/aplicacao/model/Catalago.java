@@ -32,7 +32,7 @@ public class Catalago {
     
     @NotNull(message = "Informe um valor válido.")
     @Min(value = 1, message = "Informe uma faixa etária válida.")
-    private String faixaEtaria; 
+    private Integer faixaEtaria;
     
     @NotNull(message = "Informe um valor válido.")
     @Min(value = 1, message = "Informe um valor válido.")
@@ -71,11 +71,11 @@ public class Catalago {
 		this.genero = genero;
 	}
 
-	public String getFaixaEtaria() {
+	public Integer getFaixaEtaria() {
 		return faixaEtaria;
 	}
 
-	public void setFaixaEtaria(String faixaEtaria) {
+	public void setFaixaEtaria(Integer faixaEtaria) {
 		this.faixaEtaria = faixaEtaria;
 	}
 

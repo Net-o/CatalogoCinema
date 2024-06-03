@@ -6,16 +6,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Form Produtos</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<title>Form Filmes </title>
 </head>
 <body>
     
 
     <div class="row justify-content-center mt-3">
         <div class="col-md-4">
-            <form:form method="post" modelAttribute="produto">
+            <form:form method="post" modelAttribute="Filme">
                 <fieldset>
-                    <legend>Produtos</legend>
+                    <legend>Estreia </legend>
                     <div class="mb-3">
                         <label for="id" class="form-label">ID: </label>
                         <input class="form-control" type="number" id="id" name="id" placeholder="ID"/>
@@ -43,7 +45,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="duracao" class="form-label">Duração: </label>
-                        <input class="form-control" type="number" id="duracao" name="duracao" placeholder="Duração"/>
+                        <input class="form-control" type="number" id="duracao" name="duracao" placeholder="Duração em minutos"/>
                         <span style="color:red"><form:errors path="duracao"/></span>
                     </div>
                     <div class="mb-3">
@@ -65,5 +67,9 @@
             </form:form>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     </body>
 </html>
