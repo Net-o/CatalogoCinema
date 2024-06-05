@@ -11,53 +11,50 @@
 <title>Form Filmes </title>
 </head>
 <body>
-    <div>
-    		<a href="/catalogo/registrarFilme">Cadastrar</a> | <a href="/catalogo/listarFilmes">Listar</a>
-    	</div>
+
 
     <div class="row justify-content-center mt-3">
         <div class="col-md-4">
-            <form:form method="post" modelAttribute="Filme">
+            <form:form method="post" modelAttribute="filmeAlterar">
                 <fieldset>
                     <legend>Estreia </legend>
-
                     <div class="mb-3">
                         <label for="urlImagem" class="form-label">URL da Imagem: </label>
-                        <input class="form-control" type="text" id="urlImagem" name="urlImagem" placeholder="URL da Imagem"/>
+                        <input class="form-control" type="text" id="urlImagem" name="urlImagem" placeholder="URL da Imagem"/ value="${filmeAlterar.urlImagem}">
                         <span style="color:red"><form:errors path="urlImagem"/></span>
                     </div>
                     <div class="mb-3">
                         <label for="titulo" class="form-label">Título: </label>
-                        <input class="form-control" type="text" id="titulo" name="titulo" placeholder="Título"/>
+                        <input class="form-control" type="text" id="titulo" name="titulo" placeholder="Título" value="${filmeAlterar.titulo}"/>
                         <span style="color:red"><form:errors path="titulo"/></span>
                     </div>
                     <div class="mb-3">
                         <label for="genero" class="form-label">Gênero: </label>
-                        <input class="form-control" type="text" id="genero" name="genero" placeholder="Gênero"/>
+                        <input class="form-control" type="text" id="genero" name="genero" placeholder="Gênero" value="${filmeAlterar.genero}"/>
                         <span style="color:red"><form:errors path="genero"/></span>
                     </div>
                     <div class="mb-3">
                         <label for="faixaEtaria" class="form-label">Faixa Etária: </label>
-                        <input class="form-control" type="text" id="faixaEtaria" name="faixaEtaria" placeholder="Faixa Etária"/>
+                        <input class="form-control" type="text" id="faixaEtaria" name="faixaEtaria" placeholder="Faixa Etária" value="${filmeAlterar.faixaEtaria}"/>
                         <span style="color:red"><form:errors path="faixaEtaria"/></span>
                     </div>
                     <div class="mb-3">
                         <label for="duracao" class="form-label">Duração: </label>
-                        <input class="form-control" type="number" id="duracao" name="duracao" placeholder="Duração em minutos"/>
+                        <input class="form-control" type="number" id="duracao" name="duracao" placeholder="Duração em minutos" value="${filmeAlterar.duracao}"/>
                         <span style="color:red"><form:errors path="duracao"/></span>
                     </div>
                     <div class="mb-3">
                         <label for="pontuacao" class="form-label">Pontuação: </label>
-                        <input class="form-control" type="number" step="0.01" id="pontuacao" name="pontuacao" placeholder="Pontuação"/>
+                        <input class="form-control" type="number" step="0.01" id="pontuacao" name="pontuacao" placeholder="Pontuação" value="${filmeAlterar.pontuacao}"/>
                         <span style="color:red"><form:errors path="pontuacao"/></span>
                     </div>
                     <div class="mb-3">
                         <label for="descricao" class="form-label">Descrição: </label>
-                        <textarea class="form-control" rows="3" cols="5" name="descricao" id="descricao"></textarea>
+                        <textarea class="form-control" rows="3" cols="5" name="descricao" id="descricao"> value ="${filmeAlterar.descricao}"</textarea>
                     </div>
                     <div class="mb-3">
                         <label for="ano" class="form-label">Ano: </label>
-                        <input class="form-control" type="number" id="ano" name="ano" placeholder="Ano"/>
+                        <input class="form-control" type="number" id="ano" name="ano" placeholder="Ano" value ="${filmeAlterar.ano}"/>
                         <span style="color:red"><form:errors path="ano"/></span>
                     </div>
                     <button class="btn btn-primary">Cadastrar</button>

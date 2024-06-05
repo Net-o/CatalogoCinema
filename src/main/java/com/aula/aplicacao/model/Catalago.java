@@ -41,12 +41,20 @@ public class Catalago {
     @NotNull(message = "Informe um valor válido.")
     @Min(value = 1, message = "Informe um valor entre 1 e 5.")
     @Max(value = 5, message = "Informe um valor entre 1 e 5.")
-    private Float pontuacao; 
-    
+    private Float pontuacao;
+
+	@Column(length = 254)
+	private String descricao;
     @NotNull(message = "Informe um valor válido.")
     @Min(value = 1, message = "Informe um valor válido.")
     private Integer ano;
 
+	public Long getId(){
+		return id;
+	}
+	public void setId(Long id){
+		this.id = id;
+	}
 	public String getUrlImagem() {
 		return urlImagem;
 	}
@@ -93,6 +101,12 @@ public class Catalago {
 
 	public void setPontuacao(Float pontuacao) {
 		this.pontuacao = pontuacao;
+	}
+	public String getDescricao(){
+		return descricao;
+	}
+	public void setDescricao(String descricao){
+		this.descricao = descricao;
 	}
 
 	public Integer getAno() {

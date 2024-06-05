@@ -30,7 +30,7 @@ public class CatalogoController {
 	public String listFilm(Model model){
 		List<Catalago> filmes = filmService.showListFilm();
 		model.addAttribute("filmes",filmes);
-		return "pagina_listar_filmes";
+		return "listarfilmes";
 	}
 	@GetMapping("/removerFilme/{id}")
 	public String removeFilm(@PathVariable Long id, Model model){
@@ -42,11 +42,11 @@ public class CatalogoController {
 	public String updateFilmGet(@PathVariable Long id, Model model){
 		Catalago filmeAlterar = filmService.modifyFilm(id);
 		model.addAttribute("filmeAlterar",filmeAlterar);
-		return "pagina_alterar_filmes";
+		return "alterarFilme";
 	}
 	@PostMapping("/alterarFilme/{id}")
-	public String updateFilmPost(@ModelAttribute @Valid Catalago FilmAlterar){
-		filmService.saveFilm(FilmAlterar);
+	public String updateFilmPost(@ModelAttribute @Valid Catalago filmAlterar){
+		filmService.saveFilm(filmAlterar);
 		return"cadastro";
 	}
 }
