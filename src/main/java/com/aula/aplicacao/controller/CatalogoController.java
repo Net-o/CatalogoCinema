@@ -1,11 +1,12 @@
 package com.aula.aplicacao.controller;
 
-import com.aula.aplicacao.model.Catalago;
+import com.aula.aplicacao.model.Catalogo;
 import com.aula.aplicacao.service.FilmService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,17 +19,20 @@ public class CatalogoController {
 
 	@GetMapping("/registrarFilme")
 	public String formFilmGet(Model model) {
-		model.addAttribute("Filme", new Catalago());
+		model.addAttribute("filme", new Catalogo());
 		return "cadastro";
 	}
 	@PostMapping("/registrarFilme")
-	public String formFilmPost(@ModelAttribute @Valid Catalago Film){
-		filmService.saveFilm(Film);
+	public String formFilmPost(@ModelAttribute @Valid Catalogo film, BindingResult bindingResult){
+		if(bindingResult.hasErrors()) {
+			return "cadastro";
+		}
+		filmService.saveFilm(film);
 		return "cadastro";
 	}
 	@GetMapping("/listarFilmes")
 	public String listFilm(Model model){
-		List<Catalago> filmes = filmService.showListFilm();
+		List<Catalogo> filmes = filmService.showListFilm();
 		model.addAttribute("filmes",filmes);
 		return "listarfilmes";
 	}
@@ -40,12 +44,12 @@ public class CatalogoController {
 	}
 	@GetMapping("/alterarFilme/{id}")
 	public String updateFilmGet(@PathVariable Long id, Model model){
-		Catalago filmeAlterar = filmService.modifyFilm(id);
+		Catalogo filmeAlterar = filmService.modifyFilm(id);
 		model.addAttribute("filmeAlterar",filmeAlterar);
 		return "alterarFilme";
 	}
 	@PostMapping("/alterarFilme/{id}")
-	public String updateFilmPost(@ModelAttribute @Valid Catalago filmAlterar){
+	public String updateFilmPost(@ModelAttribute @Valid Catalogo filmAlterar){
 		filmService.saveFilm(filmAlterar);
 		return"cadastro";
 	}

@@ -13,7 +13,7 @@ import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "tb_catalagoFilmes")
-public class Catalago {
+public class Catalogo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,12 +46,27 @@ public class Catalago {
 	@Column(length = 254)
 	private String descricao;
     @NotNull(message = "Informe um valor válido.")
-    @Min(value = 1, message = "Informe um valor válido.")
+    @Min(value = 1950, message = "Informe um valor válido.")
     private Integer ano;
+
+	public Catalogo() {
+	}
+
+	public Catalogo(String urlImagem, String descricao, String genero, String titulo, Integer ano, Integer faixaEtaria, Integer duracao, Float pontuacao) {
+		this.urlImagem = urlImagem;
+		this.descricao = descricao;
+		this.genero = genero;
+		this.ano = ano;
+		this.titulo = titulo;
+		this.faixaEtaria = faixaEtaria;
+		this.duracao = duracao;
+		this.pontuacao = pontuacao;
+	}
 
 	public Long getId(){
 		return id;
 	}
+
 	public void setId(Long id){
 		this.id = id;
 	}

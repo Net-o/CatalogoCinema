@@ -1,6 +1,6 @@
 package com.aula.aplicacao.service;
 
-import com.aula.aplicacao.model.Catalago;
+import com.aula.aplicacao.model.Catalogo;
 import com.aula.aplicacao.repository.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,17 +13,17 @@ public class FilmService {
     @Autowired
     private FilmRepository filmRepository;
 
-    public void saveFilm(Catalago film){
+    public void saveFilm(Catalogo film){
          filmRepository.save(film);
     }
-    public List<Catalago> showListFilm(){
-        return (List<Catalago>) filmRepository.findAll();
+    public List<Catalogo> showListFilm(){
+        return (List<Catalogo>) filmRepository.findAll();
     }
-    public Catalago showFilm(Long id){
+    public Catalogo showFilm(Long id){
         return filmRepository.findById(id).get();
     }
-    public Catalago modifyFilm(Long id) {
-        Optional<Catalago> optionalCatalago = filmRepository.findById(id);
+    public Catalogo modifyFilm(Long id) {
+        Optional<Catalogo> optionalCatalago = filmRepository.findById(id);
         if (optionalCatalago.isPresent()) {
             return optionalCatalago.get();
         } else {
