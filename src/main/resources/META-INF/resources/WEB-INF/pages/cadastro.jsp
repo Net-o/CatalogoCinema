@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<<<<<<< HEAD
 
 <!DOCTYPE html>
-=======
->>>>>>> 553f2cc5024751cbd5124e30a9c3a30726967f80
 <html>
 <head>
 <meta charset="UTF-8">
@@ -75,7 +72,7 @@
             <form:form method="post" modelAttribute="filme">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <fieldset>
-                    <legend>Estreia </legend>
+                    <legend>Adicionar Filme</legend>
 
                     <div class="mb-3">
                         <label for="urlImagem" class="form-label">URL da Imagem: </label>

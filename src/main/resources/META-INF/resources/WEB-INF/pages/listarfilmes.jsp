@@ -22,11 +22,11 @@
   th, td {
       padding: 10px;
       text-align: left;
+      color:#ffffff;
   }
-
-  tr:nth-child(even) {
-      background-color: #444;
-  }
+   .tabela-filmes table tbody tr:hover {
+       background-color: #555;
+   }
 
   tr:hover {
       background-color: #555;
@@ -50,7 +50,7 @@
 		<a href="/catalogo/registrarFilme" class="btn btn-warning">Cadastrar</a>
 		<a href="/catalogo/listarFilmes" class="btn btn-warning">Listar</a>
 	</div>
-
+    <div class="tabela-filmes">
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -61,6 +61,7 @@
 				<th>Faixa etária</th>
 				<th>Duração</th>
 				<th>Pontuação</th>
+				<th>Ano</th>
 				<th>Descrição</th>
 				<th>Opções</th>
 			</tr>
@@ -75,6 +76,7 @@
 					<td>${film.faixaEtaria}</td>
 					<td>${film.duracao}</td>
 					<td>${film.pontuacao}</td>
+					<td>${film.ano}</td>
 					<td>${film.descricao}</td>
 					<td>
 						<a href="/catalogo/removerFilme/${film.id}" class="btn btn-danger btn-sm">Deletar</a>
@@ -84,5 +86,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	</div>
 </body>
 </html>
